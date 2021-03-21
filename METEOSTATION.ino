@@ -55,10 +55,15 @@ void loop() {
   //Вывод температуры
   lcd.setCursor(7, 0);
   lcd.print("Temp:");
-  lcd.setCursor(13, 0);
   lcd.print(int(t));
-  lcd.setCursor(14, 0);
-  lcd.print(" C");
+  if(t>=0 || t<10){
+     lcd.setCursor(14, 0);
+  }
+  else{
+     lcd.setCursor(15, 0);
+  }
+ 
+  lcd.print("C");
 
   //Вывод температуры которую чувствет человек
   lcd.setCursor(0, 1);
