@@ -1,7 +1,7 @@
 /*
-Метеостанция на датчиках DHT
-Написал код M_A_Production
-Сайт maprod.ru
+  Метеостанция на датчиках DHT
+  Написал код M_A_Production
+  Сайт maprod.ru
 */
 //Библиотека датчика температуры
 #include "DHT.h"
@@ -51,21 +51,14 @@ void loop() {
   lcd.setCursor(0, 0);
   lcd.print("Hum:");
   lcd.print(int(h));
-  lcd.setCursor(7, 0);
+  
   //Вывод температуры
+  lcd.setCursor(7, 0);
   lcd.print("Temp:");
-  if (t > 0 || t > 10) { //Логика вывода температуры
-    lcd.setCursor(13, 0);
-    lcd.print(int(t));
-    lcd.setCursor(14, 0);
-    lcd.print("C");
-  }
-  if (t < 10 || t < -1) {
-    lcd.setCursor(13, 0);
-    lcd.print(int(t));
-    lcd.setCursor(15, 0);
-    lcd.print("C");
-  }
+  lcd.setCursor(13, 0);
+  lcd.print(int(t));
+  lcd.setCursor(14, 0);
+  lcd.print(" C");
 
   //Вывод температуры которую чувствет человек
   lcd.setCursor(0, 1);
@@ -80,3 +73,4 @@ void loop() {
 
 
 }
+
