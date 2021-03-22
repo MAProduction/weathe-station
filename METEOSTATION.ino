@@ -19,7 +19,10 @@ DHT dht(DHTPIN, DHTTYPE);
 //Настройка дисплейного модуля по шине I2C
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 void setup() {
-
+ /*
+ pinMode(3,INPUT_PULLUP);
+ digitalWrite(3, HIGH);
+ */
   //Запуск дисплейного модуля
   lcd.init();
   lcd.init();
@@ -30,6 +33,15 @@ void setup() {
 }
 
 void loop() {
+  /*
+  //Включение и выключение дисплейного модуля с кнопки
+  if(digitalRead(3)==LOW){
+    lcd.noDisplay();
+  }
+  else{
+    lcd.display();
+  }
+  */
   //Запись значений с датчика в переменные
   float h = dht.readHumidity(); //Влажность
   float t = dht.readTemperature(); //Темпратура
@@ -78,4 +90,3 @@ void loop() {
 
 
 }
-
